@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>发布编辑 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="publish">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <a class="icon-btn" data-back href="publish.html" aria-label="返回">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18 9 12l6-6"></path>
+              </svg>
+            </a>
+            <div class="topbar-title">发布编辑</div>
+            <div class="topbar-spacer"></div>
+            <a class="btn primary" href="home.html">发布</a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">已选图片</div>
+                <span class="muted small">1/9</span>
+              </div>
+              <div class="grid-2">
+                <div class="card note">
+                  <div class="note-media" style="height:150px"></div>
+                </div>
+                <div class="card note" style="opacity:.55">
+                  <div class="note-media" style="height:150px"></div>
+                </div>
+              </div>
+              <div class="muted small">（原型展示：图片为占位符）</div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div class="field">
+                <div class="label">标题</div>
+                <input class="input" value="冬日通勤简约穿搭 | 低饱和也很显气色" />
+              </div>
+              <div class="field">
+                <div class="label">正文</div>
+                <textarea class="textarea">分享一套最近常穿的通勤组合：舒服、显精神、拍照也好看。附上搭配比例～</textarea>
+              </div>
+              <div class="row" style="flex-wrap:wrap">
+                <a class="btn" href="publish-edit.html">#通勤穿搭</a>
+                <a class="btn" href="publish-edit.html">#简约风</a>
+                <a class="btn ghost" href="publish-edit.html">+ 添加标签</a>
+              </div>
+              <div class="row between">
+                <div class="row" style="gap:10px">
+                  <span class="kbd">位置</span><span class="muted">上海</span>
+                </div>
+                <a class="btn ghost" href="publish-edit.html">修改</a>
+              </div>
+              <div class="row between">
+                <div class="row" style="gap:10px">
+                  <span class="kbd">可见</span><span class="muted">公开</span>
+                </div>
+                <a class="btn ghost" href="publish-edit.html">设置</a>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-box"></div>
+            <div style="height:12px"></div>
+            <div class="skeleton sk-line w80" style="margin:0 auto"></div>
+            <div class="state-hint">正在加载编辑页…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">还没选择内容</div>
+            <div class="state-hint">先从发布入口选择拍摄或选取照片。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="publish.html">去选择</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">打开失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="publish-edit.html">重试</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+

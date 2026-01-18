@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>搜索 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="search">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <a class="icon-btn" data-back href="home.html" aria-label="返回">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18 9 12l6-6"></path>
+              </svg>
+            </a>
+            <div class="pill" style="flex:1">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"></path>
+                <path d="M16.5 16.5 21 21"></path>
+              </svg>
+              <input value="通勤穿搭" aria-label="搜索输入框" />
+            </div>
+            <a class="btn ghost" href="search.html">搜索</a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">热搜</div>
+                <span class="muted small">实时</span>
+              </div>
+              <div class="col" style="gap:10px">
+                <a class="row between" href="search.html"><span># 通勤穿搭</span><span class="muted small">12.3w</span></a>
+                <a class="row between" href="search.html"><span># 氛围感拍照</span><span class="muted small">8.4w</span></a>
+                <a class="row between" href="search.html"><span># 一人食</span><span class="muted small">6.1w</span></a>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">搜索结果</div>
+                <span class="muted small">综合</span>
+              </div>
+              <div class="grid-2">
+                <a class="card note" href="note.html">
+                  <div class="note-media" style="height:160px"></div>
+                  <div class="note-body">
+                    <div class="note-title">通勤外套怎么选：3种版型对比</div>
+                    <div class="note-meta"><span>@W</span><span>2.3k</span></div>
+                  </div>
+                </a>
+                <a class="card note" href="note.html">
+                  <div class="note-media" style="height:210px"></div>
+                  <div class="note-body">
+                    <div class="note-title">一周通勤胶囊衣橱：不费脑穿搭</div>
+                    <div class="note-meta"><span>@Miya</span><span>9.8k</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-line w80" style="margin:0 auto"></div>
+            <div style="height:10px"></div>
+            <div class="skeleton sk-line w60" style="margin:0 auto"></div>
+            <div style="height:14px"></div>
+            <div class="skeleton sk-box"></div>
+            <div class="state-hint">正在搜索…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">没有找到结果</div>
+            <div class="state-hint">换个关键词试试，或者去发现页看看热门话题。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="discover.html">去发现</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">搜索失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="search.html">重试</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+

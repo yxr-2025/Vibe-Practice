@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>个人主页 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="profile">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <div class="topbar-title">我的</div>
+            <div class="topbar-spacer"></div>
+            <a class="icon-btn" href="login.html" aria-label="登录注册">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 17l5-5-5-5"></path>
+                <path d="M15 12H3"></path>
+                <path d="M21 4v16"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="card pad col">
+              <div class="row between">
+                <div class="row">
+                  <span class="avatar"></span>
+                  <div class="col" style="gap:2px">
+                    <div style="font-weight:900">小秋</div>
+                    <div class="muted small">ID: 21036</div>
+                  </div>
+                </div>
+                <a class="btn ghost" href="profile.html">编辑资料</a>
+              </div>
+              <div class="row between">
+                <div class="row" style="gap:18px">
+                  <div class="col" style="gap:2px; align-items:flex-start">
+                    <div style="font-weight:900">128</div>
+                    <div class="muted small">关注</div>
+                  </div>
+                  <div class="col" style="gap:2px; align-items:flex-start">
+                    <div style="font-weight:900">2.3w</div>
+                    <div class="muted small">粉丝</div>
+                  </div>
+                  <div class="col" style="gap:2px; align-items:flex-start">
+                    <div style="font-weight:900">67</div>
+                    <div class="muted small">获赞</div>
+                  </div>
+                </div>
+                <a class="btn primary" href="login.html">切换账号</a>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">我的笔记</div>
+                <span class="muted small">公开 12</span>
+              </div>
+              <div class="grid-2">
+                <a class="card note" href="note.html">
+                  <div class="note-media" style="height:160px"></div>
+                  <div class="note-body">
+                    <div class="note-title">一周通勤穿搭：不用早起也能精致</div>
+                    <div class="note-meta"><span class="muted">3天前</span><span>1.8k</span></div>
+                  </div>
+                </a>
+                <a class="card note" href="note.html">
+                  <div class="note-media" style="height:210px"></div>
+                  <div class="note-body">
+                    <div class="note-title">收纳小心得：衣柜不再爆炸的秘诀</div>
+                    <div class="note-meta"><span class="muted">1周前</span><span>6.2k</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-box"></div>
+            <div style="height:12px"></div>
+            <div class="skeleton sk-line w60" style="margin:0 auto"></div>
+            <div class="state-hint">正在加载个人主页…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">还没有发布笔记</div>
+            <div class="state-hint">去发布入口创建你的第一篇内容吧。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="publish.html">去发布</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">加载失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="profile.html">重试</a>
+          </div>
+        </section>
+
+        <nav class="tabbar" aria-label="底部导航">
+          <div class="tabbar-inner">
+            <a class="tab" data-tab="home" href="home.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M6.5 10.5V21h11V10.5"></path>
+              </svg>
+              <span>首页</span>
+            </a>
+            <a class="tab" data-tab="discover" href="discover.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path>
+                <path d="M14.5 9.5 16 8l-1.5 6.5L8 16l1.5-6.5L16 8"></path>
+              </svg>
+              <span>发现</span>
+            </a>
+            <a class="tab publish" data-tab="publish" href="publish.html" aria-label="发布">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14"></path>
+                <path d="M5 12h14"></path>
+              </svg>
+              <span>发布</span>
+            </a>
+            <a class="tab" data-tab="messages" href="messages.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"></path>
+              </svg>
+              <span>消息</span>
+            </a>
+            <a class="tab" data-tab="profile" href="profile.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21a8 8 0 1 0-16 0"></path>
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+              </svg>
+              <span>我的</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
+

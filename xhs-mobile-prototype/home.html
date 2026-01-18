@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>首页 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="home">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <div class="topbar-title">首页</div>
+            <div class="topbar-spacer"></div>
+            <a class="pill" href="search.html" aria-label="去搜索">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"></path>
+                <path d="M16.5 16.5 21 21"></path>
+              </svg>
+              <span class="small">搜索你感兴趣的内容</span>
+            </a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="row between" style="margin-bottom:10px">
+              <div class="segmented" style="flex:1">
+                <a class="active" href="home.html">推荐</a>
+                <a href="home.html">关注</a>
+              </div>
+              <a class="icon-btn" href="discover.html" aria-label="去发现">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path>
+                  <path d="M14.5 9.5 16 8l-1.5 6.5L8 16l1.5-6.5L16 8"></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="grid-2">
+              <a class="card note" href="note.html">
+                <div class="note-media"></div>
+                <div class="note-body">
+                  <div class="note-title">冬日通勤简约穿搭 | 低饱和也很显气色</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@小秋</span>
+                    </span>
+                    <span>3.2k</span>
+                  </div>
+                </div>
+              </a>
+              <a class="card note" href="note.html">
+                <div class="note-media" style="height:210px"></div>
+                <div class="note-body">
+                  <div class="note-title">平价护肤踩雷/种草合集：敏感肌友好</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@阿柚</span>
+                    </span>
+                    <span>1.1w</span>
+                  </div>
+                </div>
+              </a>
+              <a class="card note" href="note.html">
+                <div class="note-media" style="height:190px"></div>
+                <div class="note-body">
+                  <div class="note-title">周末一人食：15分钟搞定的低脂晚餐</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@Lily</span>
+                    </span>
+                    <span>6.8k</span>
+                  </div>
+                </div>
+              </a>
+              <a class="card note" href="note.html">
+                <div class="note-media" style="height:160px"></div>
+                <div class="note-body">
+                  <div class="note-title">城市散步路线：把一下午交给咖啡和书店</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@森森</span>
+                    </span>
+                    <span>9.4k</span>
+                  </div>
+                </div>
+              </a>
+              <a class="card note" href="note.html">
+                <div class="note-media" style="height:240px"></div>
+                <div class="note-body">
+                  <div class="note-title">拍照姿势速成：普通人也能拍出氛围感</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@小北</span>
+                    </span>
+                    <span>2.4w</span>
+                  </div>
+                </div>
+              </a>
+              <a class="card note" href="note.html">
+                <div class="note-media" style="height:170px"></div>
+                <div class="note-body">
+                  <div class="note-title">好用的小工具分享：提升效率的 8 个 App</div>
+                  <div class="note-meta">
+                    <span class="row" style="gap:8px">
+                      <span class="avatar sm"></span><span>@Kay</span>
+                    </span>
+                    <span>4.0k</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-box"></div>
+            <div style="height:12px"></div>
+            <div class="skeleton sk-line w80" style="margin:0 auto"></div>
+            <div style="height:8px"></div>
+            <div class="skeleton sk-line w60" style="margin:0 auto"></div>
+            <div class="state-hint">正在加载推荐内容…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">还没有内容</div>
+            <div class="state-hint">去发现页逛逛，关注你感兴趣的人和话题。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="discover.html">去发现</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">加载失败</div>
+            <div class="state-hint">网络有点问题，稍后再试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="home.html">重试</a>
+          </div>
+        </section>
+
+        <nav class="tabbar" aria-label="底部导航">
+          <div class="tabbar-inner">
+            <a class="tab" data-tab="home" href="home.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M6.5 10.5V21h11V10.5"></path>
+              </svg>
+              <span>首页</span>
+            </a>
+            <a class="tab" data-tab="discover" href="discover.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path>
+                <path d="M14.5 9.5 16 8l-1.5 6.5L8 16l1.5-6.5L16 8"></path>
+              </svg>
+              <span>发现</span>
+            </a>
+            <a class="tab publish" data-tab="publish" href="publish.html" aria-label="发布">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14"></path>
+                <path d="M5 12h14"></path>
+              </svg>
+              <span>发布</span>
+            </a>
+            <a class="tab" data-tab="messages" href="messages.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"></path>
+              </svg>
+              <span>消息</span>
+            </a>
+            <a class="tab" data-tab="profile" href="profile.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21a8 8 0 1 0-16 0"></path>
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+              </svg>
+              <span>我的</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
+

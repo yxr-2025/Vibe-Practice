@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>小红书移动端原型（HTML）</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="index">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <div class="topbar-title">原型入口</div>
+            <div class="topbar-spacer"></div>
+            <span class="kbd">state=normal/loading/empty/error</span>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="card pad col">
+            <div class="row between">
+              <div class="col" style="gap:4px">
+                <div style="font-weight:800">小红书移动端（轻量可点击）</div>
+                <div class="muted small">规格：390×844 + safe-area；交互：Tab + 跳转</div>
+              </div>
+              <a class="btn ghost" href="home.html">开始</a>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="card pad col">
+            <div style="font-weight:800">界面列表</div>
+            <div class="grid-2">
+              <a class="btn" href="home.html">首页瀑布流</a>
+              <a class="btn" href="discover.html">发现页</a>
+              <a class="btn" href="search.html">搜索页</a>
+              <a class="btn" href="note.html">笔记详情</a>
+              <a class="btn" href="publish.html">发布入口</a>
+              <a class="btn" href="publish-edit.html">发布编辑</a>
+              <a class="btn" href="messages.html">消息</a>
+              <a class="btn" href="profile.html">个人主页</a>
+              <a class="btn" href="login.html">登录注册</a>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="card pad col">
+            <div style="font-weight:800">快速查看状态</div>
+            <div class="row" style="flex-wrap:wrap">
+              <a class="btn" href="home.html?state=loading">加载态</a>
+              <a class="btn" href="home.html?state=empty">空态</a>
+              <a class="btn" href="home.html?state=error">错误态</a>
+              <a class="btn" href="home.html">正常态</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

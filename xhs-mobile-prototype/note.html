@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>笔记详情 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="note">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <a class="icon-btn" data-back href="home.html" aria-label="返回">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18 9 12l6-6"></path>
+              </svg>
+            </a>
+            <div class="topbar-title">笔记</div>
+            <div class="topbar-spacer"></div>
+            <a class="icon-btn" href="note.html" aria-label="分享">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v10"></path>
+                <path d="M8 7l4-4 4 4"></path>
+                <path d="M20 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="card note" style="overflow:hidden">
+              <div class="note-media" style="height:320px"></div>
+              <div class="card pad col" style="border:0;border-radius:0">
+                <div class="row between">
+                  <div class="row">
+                    <span class="avatar"></span>
+                    <div class="col" style="gap:2px">
+                      <div style="font-weight:800">小秋</div>
+                      <div class="muted small">穿搭 · 生活方式</div>
+                    </div>
+                  </div>
+                  <a class="btn primary" href="profile.html">关注</a>
+                </div>
+
+                <div class="col" style="gap:6px">
+                  <div style="font-weight:900; font-size:16px; line-height:1.25">
+                    冬日通勤简约穿搭 | 低饱和也很显气色
+                  </div>
+                  <div class="muted" style="font-size:13px; line-height:1.5">
+                    今天分享一套我最近最常穿的通勤组合：舒服、显精神、拍照也好看。附上选品思路和搭配比例～
+                  </div>
+                  <div class="row" style="flex-wrap:wrap">
+                    <span class="pill">#通勤穿搭</span>
+                    <span class="pill">#简约风</span>
+                    <span class="pill">#低饱和</span>
+                  </div>
+                </div>
+
+                <div class="row between">
+                  <div class="row" style="gap:8px">
+                    <a class="btn" href="note.html"><span>点赞</span><span class="muted small">3.2k</span></a>
+                    <a class="btn" href="note.html"><span>收藏</span><span class="muted small">1.1k</span></a>
+                    <a class="btn" href="note.html"><span>评论</span><span class="muted small">268</span></a>
+                  </div>
+                  <span class="muted small">2小时前 · 上海</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">评论</div>
+                <a class="btn ghost" href="note.html">按热度</a>
+              </div>
+              <div class="col" style="gap:14px">
+                <div class="row" style="align-items:flex-start">
+                  <span class="avatar sm"></span>
+                  <div class="col" style="gap:4px; flex:1">
+                    <div class="row between">
+                      <div style="font-weight:700">阿柚</div>
+                      <span class="muted small">12m</span>
+                    </div>
+                    <div style="font-size:13px; line-height:1.4">配色好舒服！请问外套是什么面料呀？</div>
+                    <div class="muted small">回复 · 赞 24</div>
+                  </div>
+                </div>
+                <div class="row" style="align-items:flex-start">
+                  <span class="avatar sm"></span>
+                  <div class="col" style="gap:4px; flex:1">
+                    <div class="row between">
+                      <div style="font-weight:700">森森</div>
+                      <span class="muted small">35m</span>
+                    </div>
+                    <div style="font-size:13px; line-height:1.4">通勤党狠狠爱住，收藏了！</div>
+                    <div class="muted small">回复 · 赞 18</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad row between">
+              <div class="pill" style="flex:1">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"></path>
+                </svg>
+                <input value="" placeholder="说点什么…" aria-label="评论输入框" />
+              </div>
+              <a class="btn primary" href="note.html">发送</a>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-box"></div>
+            <div style="height:12px"></div>
+            <div class="skeleton sk-line w80" style="margin:0 auto"></div>
+            <div style="height:8px"></div>
+            <div class="skeleton sk-line w60" style="margin:0 auto"></div>
+            <div class="state-hint">正在加载笔记详情…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">内容不可用</div>
+            <div class="state-hint">这篇笔记可能已被删除或设为私密。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="home.html">返回首页</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">加载失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="note.html">重试</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+

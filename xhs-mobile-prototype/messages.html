@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>消息 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="messages">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <div class="topbar-title">消息</div>
+            <div class="topbar-spacer"></div>
+            <a class="icon-btn" href="messages.html" aria-label="设置">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
+                <path d="M19.4 15a8 8 0 0 0 .1-1l2-1-2-4-2.2.7a8 8 0 0 0-1.7-1L15 3h-6l-.6 5.7a8 8 0 0 0-1.7 1L4.5 9 2.5 13l2 1a8 8 0 0 0 .1 1l-2 1 2 4 2.2-.7a8 8 0 0 0 1.7 1L9 21h6l.6-5.7a8 8 0 0 0 1.7-1l2.2.7 2-4-2-1Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="segmented">
+              <a data-tab-link="notify" class="active" href="messages.html?tab=notify">通知</a>
+              <a data-tab-link="chat" href="messages.html?tab=chat">私信</a>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <section data-tab-panel="notify">
+              <div class="card pad col">
+                <div class="row between">
+                  <div style="font-weight:800">通知</div>
+                  <span class="muted small">今天</span>
+                </div>
+                <div class="col" style="gap:14px">
+                  <a class="row" href="note.html">
+                    <span class="avatar sm"></span>
+                    <div class="col" style="gap:4px; flex:1">
+                      <div class="row between">
+                        <div style="font-weight:700">点赞提醒</div>
+                        <span class="muted small">10m</span>
+                      </div>
+                      <div class="muted small">有人点赞了你的笔记</div>
+                    </div>
+                  </a>
+                  <a class="row" href="note.html">
+                    <span class="avatar sm"></span>
+                    <div class="col" style="gap:4px; flex:1">
+                      <div class="row between">
+                        <div style="font-weight:700">评论提醒</div>
+                        <span class="muted small">35m</span>
+                      </div>
+                      <div class="muted small">有人评论了：配色好舒服！</div>
+                    </div>
+                  </a>
+                  <a class="row" href="profile.html">
+                    <span class="avatar sm"></span>
+                    <div class="col" style="gap:4px; flex:1">
+                      <div class="row between">
+                        <div style="font-weight:700">新增粉丝</div>
+                        <span class="muted small">2h</span>
+                      </div>
+                      <div class="muted small">阿柚关注了你</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <section data-tab-panel="chat" style="display:none">
+              <div class="card pad col">
+                <div class="row between">
+                  <div style="font-weight:800">私信</div>
+                  <span class="muted small">最近</span>
+                </div>
+                <div class="col" style="gap:14px">
+                  <a class="row" href="messages.html?tab=chat">
+                    <span class="avatar sm"></span>
+                    <div class="col" style="gap:4px; flex:1">
+                      <div class="row between">
+                        <div style="font-weight:700">森森</div>
+                        <span class="muted small">昨天</span>
+                      </div>
+                      <div class="muted small">通勤外套链接能发一下吗？</div>
+                    </div>
+                  </a>
+                  <a class="row" href="messages.html?tab=chat">
+                    <span class="avatar sm"></span>
+                    <div class="col" style="gap:4px; flex:1">
+                      <div class="row between">
+                        <div style="font-weight:700">Kay</div>
+                        <span class="muted small">2天前</span>
+                      </div>
+                      <div class="muted small">一起约个周末探店？</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-line w80" style="margin:0 auto"></div>
+            <div style="height:10px"></div>
+            <div class="skeleton sk-box"></div>
+            <div class="state-hint">正在加载消息…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">暂无消息</div>
+            <div class="state-hint">当有人互动或给你发私信时，会出现在这里。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="home.html">去逛逛</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">加载失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="messages.html">重试</a>
+          </div>
+        </section>
+
+        <nav class="tabbar" aria-label="底部导航">
+          <div class="tabbar-inner">
+            <a class="tab" data-tab="home" href="home.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M6.5 10.5V21h11V10.5"></path>
+              </svg>
+              <span>首页</span>
+            </a>
+            <a class="tab" data-tab="discover" href="discover.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path>
+                <path d="M14.5 9.5 16 8l-1.5 6.5L8 16l1.5-6.5L16 8"></path>
+              </svg>
+              <span>发现</span>
+            </a>
+            <a class="tab publish" data-tab="publish" href="publish.html" aria-label="发布">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14"></path>
+                <path d="M5 12h14"></path>
+              </svg>
+              <span>发布</span>
+            </a>
+            <a class="tab" data-tab="messages" href="messages.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"></path>
+              </svg>
+              <span>消息</span>
+            </a>
+            <a class="tab" data-tab="profile" href="profile.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21a8 8 0 1 0-16 0"></path>
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+              </svg>
+              <span>我的</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
+
