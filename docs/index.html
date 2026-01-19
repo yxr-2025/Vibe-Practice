@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>成长与连接 · 静态网页 PPT</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <header class="topbar" role="banner">
+        <button class="icon-btn" id="sidebarToggle" type="button" aria-label="折叠/展开侧边栏" aria-pressed="false">
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="topbar__titles">
+          <div class="topbar__kicker">成长与连接</div>
+          <div class="topbar__title" id="topbarTitle">—</div>
+        </div>
+
+        <div class="topbar__meta">
+          <span class="pill" id="progress">1 / 1</span>
+        </div>
+      </header>
+
+      <aside class="sidebar" id="sidebar" aria-label="缩略图侧边栏">
+        <div class="sidebar__header">
+          <div class="sidebar__label">目录</div>
+          <div class="sidebar__hint">点击跳转 · ← → 切换</div>
+        </div>
+        <nav class="thumbs" id="thumbs" aria-label="幻灯片缩略图"></nav>
+      </aside>
+
+      <main class="stage" id="stage" aria-live="polite">
+        <!-- Slide 1 (keep) -->
+        <section class="slide is-active" data-title="封面" data-icon="🌿">
+          <div class="slide__inner cover">
+            <div class="cover__text">
+              <div class="cover__pager" aria-label="页码">第 1 页 / 共 6 页</div>
+              <div class="cover__eyebrow">🌱 📅 2025年终总结</div>
+              <h1 class="cover__headline">成长不是直线<br />是路径的汇流</h1>
+              <div class="cover__subtitle">2025年终总结 · 五个月学习回顾 × 当下行动 × 未来展望</div>
+              <p class="cover__sub">低饱和度、留白与手绘感——把每一次坚持与调整，连成一张更立体的能力地图。</p>
+              <div class="cover__chips" aria-label="关键词">
+                <span class="chip">沉静</span>
+                <span class="chip">真诚</span>
+                <span class="chip">有温度</span>
+                <span class="chip">2025</span>
+              </div>
+            </div>
+
+            <div class="cover__art">
+              <svg viewBox="0 0 640 420" class="sketch" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="var(--sage-200)" />
+                    <stop offset="1" stop-color="var(--sky-200)" />
+                  </linearGradient>
+                  <filter id="paper">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
+                    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .08 0" />
+                    <feComposite operator="in" in2="SourceGraphic" />
+                  </filter>
+                </defs>
+
+                <rect x="28" y="22" width="584" height="376" rx="26" fill="url(#g1)" opacity="0.35" />
+                <rect x="40" y="34" width="560" height="352" rx="22" fill="var(--paper)" opacity="0.9" filter="url(#paper)" />
+
+                <!-- “多条小径汇入森林”：三条路径 -->
+                <path d="M120 340 C170 300, 220 290, 280 270 C340 250, 385 220, 420 180" fill="none" stroke="var(--ink-200)" stroke-width="3.4" stroke-linecap="round" opacity="0.75" />
+                <path d="M220 352 C260 320, 305 300, 340 275 C380 245, 430 210, 470 165" fill="none" stroke="var(--ink-200)" stroke-width="2.8" stroke-linecap="round" opacity="0.65" />
+                <path d="M80 320 C140 300, 200 278, 250 250 C320 210, 390 180, 505 125" fill="none" stroke="var(--ink-200)" stroke-width="2.6" stroke-linecap="round" opacity="0.55" />
+
+                <!-- “森林”：几棵手绘树 -->
+                <g opacity="0.9">
+                  <path d="M490 95 C470 115, 460 130, 450 150 C472 148, 488 155, 507 168 C502 144, 515 132, 530 120 C512 118, 500 110, 490 95 Z" fill="var(--sage-300)" stroke="var(--ink-200)" stroke-width="2.2" />
+                  <path d="M512 168 L510 220" stroke="var(--ink-200)" stroke-width="2.4" stroke-linecap="round" />
+                  <path d="M440 120 C420 145, 412 162, 406 184 C428 176, 448 180, 468 200 C468 176, 482 160, 500 148 C478 146, 458 136, 440 120 Z" fill="var(--sage-200)" stroke="var(--ink-200)" stroke-width="2.2" opacity="0.95" />
+                  <path d="M468 200 L466 236" stroke="var(--ink-200)" stroke-width="2.4" stroke-linecap="round" />
+                </g>
+
+                <!-- “种子破土”：右下角小芽 -->
+                <g transform="translate(120 258)" opacity="0.95">
+                  <path d="M72 96 C62 82, 50 70, 35 62 C45 88, 52 108, 55 128 C58 112, 64 102, 72 96 Z" fill="var(--sand-200)" stroke="var(--ink-200)" stroke-width="2.2" />
+                  <path d="M55 128 C56 108, 58 90, 66 74" fill="none" stroke="var(--ink-200)" stroke-width="2.4" stroke-linecap="round" />
+                  <path d="M66 74 C62 60, 54 52, 40 48" fill="none" stroke="var(--sage-400)" stroke-width="6" stroke-linecap="round" opacity="0.7" />
+                  <path d="M66 74 C74 60, 86 54, 100 54" fill="none" stroke="var(--sage-400)" stroke-width="6" stroke-linecap="round" opacity="0.65" />
+                  <circle cx="66" cy="74" r="2.6" fill="var(--ink-200)" opacity="0.6" />
+                </g>
+              </svg>
+
+              <div class="cover__footer">
+                <div class="cover__quote">
+                  不是终点，而是新路径的起点。<span class="cover__quote-author">—— 有心人 · 2025</span>
+                </div>
+                <div class="cover__speaker" aria-label="演讲人">
+                  <svg class="cover__speaker-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>演讲人：有心人</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide" data-title="过渡 · 三个锚点" data-icon="✨">
+          <div class="slide__inner layout-3">
+            <div class="region region--top">
+              <h2 class="h2">用三个符号，把节奏讲清楚</h2>
+            </div>
+
+            <div class="region region--mid">
+              <div class="anchor">
+                <div class="anchor__item">
+                  <div class="anchor__emoji">🌱</div>
+                  <div class="anchor__title">回顾</div>
+                  <div class="anchor__desc">在探索中前行</div>
+                </div>
+                <div class="anchor__arrow" aria-hidden="true">→</div>
+                <div class="anchor__item">
+                  <div class="anchor__emoji">🛠️</div>
+                  <div class="anchor__title">行动</div>
+                  <div class="anchor__desc">把学习落在项目里</div>
+                </div>
+                <div class="anchor__arrow" aria-hidden="true">→</div>
+                <div class="anchor__item">
+                  <div class="anchor__emoji">🌍</div>
+                  <div class="anchor__title">展望</div>
+                  <div class="anchor__desc">技术 × 人文 × 自我</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="region region--bottom">
+              <p class="lead subtle">
+                我相信：世界不是线性的——多元路径的交织，才能构建更立体的能力图谱。
+              </p>
+              <div class="bottom-visual" aria-hidden="true">
+                <svg viewBox="0 0 760 120" class="line-art" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M56 70 H704"
+                    fill="none"
+                    stroke="rgba(78,93,95,.22)"
+                    stroke-width="10"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="220" cy="70" r="18" fill="rgba(198,221,209,.55)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <circle cx="380" cy="70" r="18" fill="rgba(232,220,200,.5)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <circle cx="540" cy="70" r="18" fill="rgba(207,226,234,.55)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <path d="M220 70 L380 70 L540 70" fill="none" stroke="rgba(78,93,95,.28)" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="slide-footer">
+                <span class="footer-left">Yxr_ · 2026</span>
+                <span class="footer-right">从 🌱 到 🛠️ 到 🌍，节奏即方向。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide" data-title="🌱 回顾：在探索中前行" data-icon="🌱">
+          <div class="slide__inner layout-3">
+            <div class="region region--top">
+              <h2 class="h2">🌱 回顾：在探索中前行</h2>
+              <p class="lead subtle">过去五个月，我在坚持与适时“放弃”间寻找平衡：</p>
+            </div>
+
+            <div class="region region--mid">
+              <div class="grid two">
+                <div class="card">
+                  <div class="card__kicker">完成</div>
+                  <h3 class="h3">CS50</h3>
+                  <ul class="list">
+                    <li>C / Python / SQL / Web 基础</li>
+                    <li>把学习变成可复用的底盘</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <div class="card__kicker">进行中</div>
+                  <h3 class="h3">CS61B</h3>
+                  <ul class="list">
+                    <li>用 Java 构建数据结构底层理解</li>
+                    <li>更接近健壮而高效的代码</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="micro-note">也曾浅尝网络安全与算法竞赛：拓宽视野，确认方向。</div>
+            </div>
+
+            <div class="region region--bottom">
+              <div class="bottom-visual" aria-hidden="true">
+                <svg viewBox="0 0 760 120" class="line-art" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M28 86 C110 30, 190 30, 270 78 C350 126, 450 118, 520 70 C600 14, 670 18, 732 56" fill="none" stroke="rgba(78,93,95,.55)" stroke-width="2.2" stroke-linecap="round" />
+                  <circle cx="120" cy="52" r="5" fill="rgba(122,164,140,.85)" />
+                  <circle cx="392" cy="112" r="5" fill="rgba(122,164,140,.75)" />
+                  <circle cx="640" cy="30" r="5" fill="rgba(122,164,140,.7)" />
+                </svg>
+              </div>
+              <div class="slide-footer">
+                <span class="footer-left">Yxr_ · 2026</span>
+                <span class="footer-right">每一步都在靠近：健壮而高效的代码。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide" data-title="🛠️ 行动：三线并行，非线性成长" data-icon="🛠️">
+          <div class="slide__inner layout-3">
+            <div class="region region--top">
+              <h2 class="h2">🛠️ 行动：三线并行，非线性成长</h2>
+              <p class="lead subtle">寒假不是等待，而是主动布局的窗口：</p>
+            </div>
+
+            <div class="region region--mid">
+              <div class="grid three">
+                <div class="card">
+                  <div class="card__kicker">主线 01</div>
+                  <h3 class="h3">CS61B</h3>
+                  <ul class="list">
+                    <li>夯实数据结构与面向对象设计</li>
+                    <li>补齐短板，形成可复用结构</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <div class="card__kicker">主线 02</div>
+                  <h3 class="h3">产品经理思维</h3>
+                  <ul class="list">
+                    <li>理解用户、需求与产品逻辑</li>
+                    <li>从功能到价值：表达更清晰</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <div class="card__kicker">主线 03</div>
+                  <h3 class="h3">Vibe Coding</h3>
+                  <ul class="list">
+                    <li>在真实项目中感受节奏与美感</li>
+                    <li>让代码服务于创造与连接</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="region region--bottom">
+              <div class="bottom-visual" aria-hidden="true">
+                <svg viewBox="0 0 760 120" class="line-art" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="80" y1="70" x2="680" y2="70" stroke="rgba(78,93,95,.28)" stroke-width="2" />
+                  <circle cx="210" cy="70" r="18" fill="rgba(207,226,234,.55)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <circle cx="380" cy="70" r="18" fill="rgba(198,221,209,.55)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <circle cx="550" cy="70" r="18" fill="rgba(232,220,200,.5)" stroke="rgba(78,93,95,.35)" stroke-width="2" />
+                  <path d="M210 70 L380 70 L550 70" fill="none" stroke="rgba(78,93,95,.22)" stroke-width="10" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="slide-footer">
+                <span class="footer-left">Yxr_ · 2026</span>
+                <span class="footer-right">世界不是线性的，多元路径交织成能力图谱。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4 -->
+        <section class="slide" data-title="🌍 展望：技术 × 人文 × 自我" data-icon="🌍">
+          <div class="slide__inner layout-3">
+            <div class="region region--top">
+              <h2 class="h2">🌍 展望：技术 × 人文 × 自我</h2>
+              <p class="lead subtle">不止于技术精进，更要引入“人的维度”。</p>
+            </div>
+
+            <div class="region region--mid">
+              <div class="grid two">
+                <div class="card">
+                  <div class="card__kicker">技术向</div>
+                  <h3 class="h3">稳定底盘</h3>
+                  <ul class="list">
+                    <li>LeetCode / 英语 / 每日锻炼</li>
+                    <li>持续投入，长期有效</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <div class="card__kicker">人的维度</div>
+                  <h3 class="h3">内在与方法</h3>
+                  <ul class="list">
+                    <li>人生规划课：明确长期目标</li>
+                    <li>积极心理学：守护内在动力</li>
+                    <li>《Learn How to Learn》：提升元认知</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="micro-note">未来的路，是成为：技术扎实、思维开阔、内心丰盈的创造者。</div>
+            </div>
+
+            <div class="region region--bottom">
+              <div class="bottom-visual" aria-hidden="true">
+                <div class="soft-grid">
+                  <span class="soft-cell">技术</span>
+                  <span class="soft-cell">人文</span>
+                  <span class="soft-cell">自我</span>
+                </div>
+              </div>
+              <div class="slide-footer">
+                <span class="footer-left">Yxr_ · 2026</span>
+                <span class="footer-right">技术为善，创造价值。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5 (keep) -->
+        <section class="slide" data-title="结尾" data-icon="🫀">
+          <div class="slide__inner outro">
+            <div class="quote">
+              <div class="quote__mark" aria-hidden="true">“</div>
+              <div class="quote__text">技术是骨架，人文是血肉，而创造，是心跳。</div>
+              <div class="quote__mark quote__mark--end" aria-hidden="true">”</div>
+            </div>
+            <div class="outro__sub">谢谢聆听 · 也欢迎一起连接与成长</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
