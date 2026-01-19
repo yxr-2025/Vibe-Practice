@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>设置 - 小红书原型</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body data-page="settings">
+    <div class="frame">
+      <div class="app">
+        <div class="topbar">
+          <div class="topbar-inner">
+            <a class="icon-btn" data-back href="profile.html" aria-label="返回">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18 9 12l6-6"></path>
+              </svg>
+            </a>
+            <div class="topbar-title">设置</div>
+            <div class="topbar-spacer"></div>
+            <span class="muted small">原型</span>
+          </div>
+        </div>
+
+        <main data-state="normal">
+          <div class="content">
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">账号与安全</div>
+                <span class="muted small">手机/密码</span>
+              </div>
+              <a class="row between" href="settings.html">
+                <span>账号绑定</span><span class="muted small">管理</span>
+              </a>
+              <a class="row between" href="login.html" aria-label="切换账号">
+                <span>切换账号</span><span class="muted small">登录/注册</span>
+              </a>
+              <a class="row between" href="settings.html">
+                <span>隐私设置</span><span class="muted small">谁能看我</span>
+              </a>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div class="row between">
+                <div style="font-weight:800">通用</div>
+                <span class="muted small">占位</span>
+              </div>
+              <a class="row between" href="settings.html">
+                <span>深色模式</span><span class="muted small">关闭</span>
+              </a>
+              <a class="row between" href="settings.html">
+                <span>清理缓存</span><span class="muted small">128MB</span>
+              </a>
+              <a class="row between" href="settings.html">
+                <span>关于</span><span class="muted small">v1.0</span>
+              </a>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card pad col">
+              <div style="font-weight:800">账号</div>
+              <a class="btn primary block" href="login.html?msg=logout">退出登录</a>
+              <div class="muted small" style="line-height:1.5">
+                （原型：点击后跳转到登录页并展示“已退出登录”提示）
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <section class="state" data-state="loading">
+          <div class="state-card">
+            <div class="skeleton sk-box"></div>
+            <div style="height:12px"></div>
+            <div class="skeleton sk-line w60" style="margin:0 auto"></div>
+            <div class="state-hint">正在加载设置…</div>
+          </div>
+        </section>
+
+        <section class="state" data-state="empty">
+          <div class="state-card">
+            <div class="state-title">暂无设置项</div>
+            <div class="state-hint">稍后再来看看。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="settings.html">刷新</a>
+          </div>
+        </section>
+
+        <section class="state" data-state="error">
+          <div class="state-card">
+            <div class="state-title">加载失败</div>
+            <div class="state-hint">请稍后重试。</div>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="settings.html">重试</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
